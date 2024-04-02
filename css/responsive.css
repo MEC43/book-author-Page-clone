@@ -1,7 +1,10 @@
 @media (min-width: 801px) {
+  .hd .hd_wrap {
+    z-index: 99;
+  }
   .hd .sns_list {
     display: flex;
-    gap: 10px;
+    gap: 0.6rem;
   }
   .hd .sns_list a {
     background-color: var(--color-wh);
@@ -20,18 +23,11 @@
     position: relative;
   }
   .hd .gnb > li > a {
+    display: inline-block;
     padding: 0.4rem 1.1rem;
     color: var(--color-wh);
     font-family: var(--font-gth);
     font-size: 0.9rem;
-  }
-
-  .hd .gnb > li:nth-of-type(2) > a::after {
-    content: ' \f078';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    color: var(--color-wh);
-    font-size: 0.7rem;
   }
 
   .hd .gnb .sub_gnb {
@@ -48,12 +44,10 @@
     backdrop-filter: blur(3px);
   }
 
-  .hd .gnb .sub_gnb li {
-    padding: 1rem 0;
-  }
   .hd .gnb .sub_gnb a {
+    display: inline-block;
+    padding: 1.2rem 1.5rem;
     color: var(--color-wh);
-    padding: 0.5rem 1rem;
   }
 
   .hd .gnb > li:hover .sub_gnb {
@@ -69,10 +63,10 @@
 
 @media (max-width: 1300px) {
   .hd h1 {
-    padding-right: 15px;
+    padding-right: 0.8rem;
   }
   .hd .gnb > li > a {
-    padding: 0.4rem 0.5rem;
+    padding: 0.4rem 0.9rem;
   }
   /* main > .main_visual */
   .main_visual .mv_left {
@@ -83,18 +77,19 @@
   .book_main_info {
     padding: 100px 0;
   }
+
   .book_main_info .book_list {
-    gap: 20px;
+    padding-top: 2.5rem;
   }
   .book_main_info .book_list > li {
-    padding-left: 260px;
+    padding-left: 270px;
   }
   .book_main_info .book_list > li:first-of-type::before,
   .book_main_info .book_list > li:last-of-type::before {
     width: 240px;
     height: 320px;
     background-position: center;
-    margin: 40px 0;
+    margin: 2.1rem 0;
   }
   .book_main_info .book_info {
     display: block;
@@ -111,7 +106,7 @@
     padding: 90px 0;
   }
   .author .author_wrap {
-    padding: 40px 0 40px 520px;
+    padding: 40px 0 40px 530px;
   }
   .author .author_wrap::before,
   .author .author_wrap::after {
@@ -120,7 +115,7 @@
     background-position: 0 -100px;
   }
   .author .author_wrap .content_wh {
-    padding: 45px 0 20px;
+    padding: 2.4rem 0 1.1rem;
   }
   .author .authoraddress {
     width: 460px;
@@ -132,15 +127,15 @@
     padding: 90px 0;
   }
   .trusted .tr_list {
-    gap: 40px;
+    gap: 2.1rem;
   }
 
   /* main > .callout */
   .callout .callout_wrap {
-    padding: 40px 550px 40px 0;
+    padding: 2.1rem 550px 2.1rem 0;
   }
   .callout .callout_wrap::before {
-    height: 90%;
+    height: 85%;
   }
 
   /* main > .learn */
@@ -157,13 +152,13 @@
     right: 20px;
   }
   .learn .learn_list {
-    width: calc(50% - 10px);
-    padding: 80px 0 30px;
-    gap: 10px;
+    width: calc(50% - 0.6rem);
+    padding: 4.3rem 0 1.6rem;
+    gap: 0.6rem;
   }
   .learn .learn_list li {
-    width: calc((100% / 2) - 5px);
-    padding: 10px 11px;
+    width: calc((100% / 2) - 0.3rem);
+    padding: 0.5rem 0.6rem;
   }
   .learn .learn_list li > p {
     padding-top: 1.6rem;
@@ -175,11 +170,11 @@
     padding: 90px 0;
   }
   .chapter .chapter_list {
-    gap: 20px;
+    gap: 0.8rem;
   }
   .chapter .chapter_list > li {
-    width: calc((100% / 2) - 10px);
-    padding: 38px 44px;
+    width: calc((100% / 2) - 0.4rem);
+    padding: 2rem 2.3rem;
   }
   .chapter .book_info_snd {
     display: block;
@@ -191,16 +186,16 @@
   }
   .testimonial .testi_wrap {
     display: flex;
-    gap: 40px;
+    gap: 2.1rem;
   }
   .testimonial .sub_title {
     width: 100%;
   }
   .testimonial .readers_list {
-    gap: 20px;
+    gap: 1.2rem;
   }
   .testimonial .readers_list > li {
-    width: calc(50% - 10px);
+    width: calc(50% - 0.6rem);
   }
 
   /* main > .articles */
@@ -210,17 +205,17 @@
   .articleSlide .arti_card figcaption > span {
     display: block;
     padding-left: 0;
-    padding-top: 20px;
+    padding-top: 1.1rem;
   }
   .articleSlide .arti_card .imgs {
     height: 25vw;
     position: relative;
   }
   .articleSlide .arti_card figcaption {
-    padding: 20px 20px;
+    padding: 1.1rem;
   }
   .articleSlide .arti_card figcaption > .content_wh {
-    padding: 10px 0 15px;
+    padding: 0.5rem 0 0.7rem;
   }
 
   /* main > .subsc */
@@ -228,12 +223,12 @@
     padding: 90px 0;
   }
   .subsc_warp {
-    padding: 100px 100px;
+    padding: 100px;
   }
 
   /* footer*/
   .ft_wrap {
-    gap: 10px;
+    gap: 0.6rem;
   }
   .ft_wrap .foot_left {
     margin-right: 0;
@@ -245,27 +240,26 @@
 
 @media (max-width: 800px) {
   :root {
-    font-size: 16px;
-  }
-  .mw {
-    margin: 0 20px;
+    font-size: 17px;
   }
 
   /* header*/
+  .hd .mw {
+    margin: 0 20px;
+  }
   .hd .hd_wrap {
     left: 0;
     transform: none;
-    padding: 0;
   }
 
   .hd .gnb {
     position: fixed;
     background-color: var(--color-m-yl);
     height: 100vh;
+    width: 100%;
     top: 0;
     right: 0;
-    z-index: 20;
-    width: 35%;
+    z-index: 10;
     padding-top: 90px;
 
     visibility: hidden;
@@ -275,41 +269,45 @@
 
   .hd .gnb > li {
     border-bottom: 1px dashed rgba(255, 255, 255, 0.8);
-    padding: 1rem 2rem;
-    text-align: right;
+    text-align: center;
     position: relative;
   }
+
   .hd .gnb > li > a {
-    padding: 0.4rem 1.1rem;
+    display: block;
+    padding: 1rem 2rem;
     color: var(--color-m-bb);
     font-family: var(--font-gth);
     font-size: 1rem;
     font-weight: bold;
   }
+  .hd .gnb > li:nth-of-type(2) > a::after {
+    color: var(--color-m-bb);
+  }
+
   .hd .sub_gnb {
-    margin-top: 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.5s;
   }
-  .hd .sub_gnb li {
-    padding: 0.5rem;
-  }
+
   .hd .sub_gnb a {
+    display: block;
     color: var(--color-m-bb);
     font-size: 1em;
-    padding: 0.5rem;
-  }
-  .hd .gnb a:hover,
-  .hd .gnb .sub_gnb a:hover {
-    color: var(--color-m-wb);
+    padding: 1rem 2rem;
   }
 
   .hd .sns_list {
-    z-index: 999;
+    z-index: 20;
     position: fixed;
-    top: 480px;
-    right: 2rem;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 30;
     display: flex;
-    gap: 10px;
+    gap: 0.6rem;
 
     visibility: hidden;
     opacity: 0;
@@ -324,11 +322,6 @@
     text-align: center;
     line-height: 45px;
   }
-  .hd .sns_list.on,
-  .hd .gnb.on {
-    visibility: visible;
-    opacity: 1;
-  }
 
   .hd h1,
   .hd .cart_bnt,
@@ -339,21 +332,32 @@
     left: 0;
   }
   .hd .cart_bnt {
-    right: 210px;
+    right: 215px;
   }
   .hd .yellow_btn {
     right: 50px;
   }
 
   .hd .ham {
-    position: absolute;
     display: block;
-    right: 0.5rem;
-    z-index: 40;
+    right: 0.25rem;
+    z-index: 30;
   }
   .hd .ham.on {
     position: fixed;
-    right: 1.25rem;
+    right: 1rem;
+  }
+
+  .hd .sns_list.on,
+  .hd .gnb.on {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hd .gnb > li.on .sub_gnb {
+    overflow: visible;
+    max-height: 1000px;
+    opacity: 1;
   }
 
   /* main > .main_visual */
@@ -365,10 +369,8 @@
   }
   .main_visual .mv_left a {
     display: block;
-    padding: 30px 0;
-  }
-  .main_visual .mv_left > p {
-    padding: 20px 0 20px;
+    padding: 0.5rem 0;
+    margin: 1.5rem 0;
   }
 
   /* book_info 부분*/
@@ -391,7 +393,8 @@
   }
   .book_main_info .book_list > li {
     width: 80%;
-    margin: 30px auto;
+    margin: 0.6rem auto;
+    padding-block: 3rem;
   }
 
   /* main > .author */
@@ -410,10 +413,9 @@
   }
 
   .author .authoraddress {
-    width: 440px;
+    width: 410px;
     height: 130px;
     margin-top: 60px;
-    /* right: 100%; */
     transform: translateX(-50%);
     gap: 2rem;
     justify-content: center;
@@ -422,7 +424,9 @@
   .author .authoraddress img {
     width: 100px;
   }
-
+  .author .author_counter > li:nth-of-type(n + 2) {
+    padding-inline: 1rem;
+  }
   /* main > .trusted */
   .trusted {
     padding: 90px 0;
@@ -433,7 +437,7 @@
     align-items: center;
   }
   .trusted .tr_list > li {
-    width: calc(100% / 2 - 40px);
+    width: calc(100% / 2 - 2.1rem);
   }
 
   /* main > .callout */
@@ -444,7 +448,7 @@
     height: 80%;
   }
   .callout .callout_wrap .content_bl {
-    padding: 20px 0;
+    padding: 2rem 0 1.1rem;
   }
 
   /* main > .learn */
@@ -458,12 +462,15 @@
   .learn .learn_list {
     width: auto;
     padding: 50px 0 0;
-    gap: 20px;
+    gap: 1rem;
     justify-content: space-between;
   }
   .learn .learn_list li {
-    width: calc((100% / 2) - 10px);
-    padding: 20px 22px;
+    width: calc((100% / 2) - 0.5rem);
+    padding: 1.1rem 1.2rem;
+  }
+  .learn .learn_list li > p {
+    padding-top: 1rem;
   }
 
   /* main > .chapter */
@@ -471,15 +478,15 @@
     padding: 90px 0;
   }
   .chapter .chapter_list {
-    gap: 20px;
+    gap: 1.1rem;
     padding: 50px 0;
   }
   .chapter .chapter_list > li {
-    width: calc((100% / 2) - 10px);
-    padding: 25px;
+    width: calc((100% / 2) - 0.6rem);
+    padding: 1.3rem;
   }
   .chapter .chapter_list .content_wh {
-    padding: 10px 0;
+    padding: 1rem 0;
   }
   .chapter .chapter_wrap > p {
     width: 300px;
@@ -499,9 +506,10 @@
     transform: translateX(-50%);
   }
   .testimonial .content_wh {
-    padding: 30px 0 10px 0;
+    padding: 2rem 0 1rem;
   }
   .testimonial .readers_list {
+    padding-top: 1rem;
     flex-direction: row;
     gap: 10px;
   }
@@ -514,7 +522,7 @@
     position: relative;
   }
   .testimonial .readers_list > li > span {
-    padding-top: 35px;
+    padding-top: 1.5rem;
   }
   .testimonial .readers_list > li em {
     padding-block: 0.5rem;
@@ -522,7 +530,7 @@
 
   /* main > .articles */
   .articles .articles_wrap h2 {
-    margin-bottom: 50px;
+    margin-bottom: 2.7rem;
   }
   .articleSlide .arti_card .imgs {
     height: 40vw;
@@ -538,13 +546,16 @@
     margin: 0;
     padding: 50px 20px;
   }
+  .subsc_warp > p {
+    padding: 30px 20px;
+  }
 
   /* footer*/
   .foot {
-    padding-block: 40px;
+    padding-block: 2.1rem;
   }
   .ft_wrap {
-    gap: 20px;
+    gap: 1rem;
     flex-wrap: wrap;
   }
   .ft_wrap .foot_left {
@@ -553,7 +564,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block: 20px;
+    padding-block: 1rem;
   }
   .foot .ft_sns_list {
     padding-top: 0;
@@ -562,8 +573,229 @@
     width: auto;
     flex: 1;
   }
-  .foot .contact p:nth-of-type(n + 2) > span:first-of-type,
-  .ft_wrap .contact span:last-of-type {
-    width: auto;
+}
+@media (max-width: 500px) {
+  .sub_title {
+    font-size: 2rem;
+  }
+  .yellow_btn {
+    padding: 13px 20px;
+  }
+  .wh_btn {
+    padding: 15px 30px;
+  }
+  .book_info > li > span:first-of-type {
+    font-size: 1.1rem;
+  }
+  .hd .cart_bnt {
+    right: 195px;
+  }
+
+  .hd .yellow_btn {
+    right: 51px;
+  }
+
+  .main_visual .mv_left {
+    padding: 0;
+  }
+  .main_visual .mv_left::before {
+    width: 45%;
+    background-position: bottom;
+  }
+  .main_visual h2 {
+    text-align: center;
+  }
+  .main_visual h2 > strong {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    display: block;
+  }
+  .main_visual .book_info span {
+    display: block;
+  }
+  .main_visual .yellow_btn {
+    padding: 13px 20px;
+  }
+
+  .book_main_info .book_list {
+    padding-top: 0;
+    display: block;
+  }
+  .book_main_info .book_list > li {
+    padding: 380px 0 0 0;
+    margin-bottom: 60px;
+  }
+  .book_main_info .book_list > li > strong,
+  .book_main_info .book_list > li > p {
+    display: block;
+    text-align: center;
+  }
+  .book_main_info .book_info {
+    display: flex;
+    justify-content: center;
+  }
+  .book_main_info .book_info span {
+    display: block;
+  }
+
+  .book_main_info .book_list > li > ul {
+    padding: 0.5rem 0;
+  }
+  .book_main_info .book_list > li > .wh_btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .book_main_info .book_list > li:first-of-type::before,
+  .book_main_info .book_list > li:last-of-type::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .author .author_wrap {
+    padding: 300px 0 0;
+  }
+  .author .author_wrap::before,
+  .author .author_wrap::after {
+    width: 100%;
+    height: 250px;
+  }
+  .author .author_wrap::before {
+    left: 50%;
+    transform: translateX(-52%);
+    background-position: 0 -170px;
+  }
+  .author .author_wrap::after {
+    left: calc(50%);
+    transform: translateX(-48%);
+  }
+  .author .sub_title {
+    text-align: center;
+  }
+  .author .sub_title::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .author .author_counter {
+    justify-content: space-between;
+  }
+  .author .author_counter > li {
+    text-align: center;
+    width: calc(100% / 3);
+  }
+  .author .authoraddress {
+    gap: 1rem;
+    width: 95%;
+    transform: translateX(0);
+    padding-inline: 0.5rem;
+  }
+
+  .trusted .tr_list {
+    /* border: 1px solid; */
+    padding-top: 50px;
+    gap: 1.7rem;
+  }
+  .trusted .tr_list li > img {
+    height: 70px;
+  }
+
+  .callout .callout_wrap {
+    padding: 0.8rem 0;
+  }
+  .callout .callout_wrap::before {
+    background-size: 40%;
+    background-position: right;
+    top: calc(70% + 25px);
+  }
+
+  .learn .learn_list {
+    gap: 0.5rem;
+  }
+
+  .learn .learn_list li {
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    margin-bottom: 15px;
+  }
+
+  .learn .learn_list li > span {
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .learn .learn_list li > p {
+    padding-left: 4.1rem;
+    padding-top: 0;
+    font-size: 1.1rem;
+  }
+
+  .chapter .chapter_list {
+    gap: 0.5rem;
+  }
+  .chapter .chapter_list > li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .chapter .book_info_snd {
+    display: flex;
+    gap: 0;
+  }
+  .chapter .book_info_snd > li,
+  .chapter .book_info_snd li > span {
+    font-size: 0.9rem;
+  }
+  .chapter .book_info_snd li::before {
+    width: 0.5em;
+    height: 0.5rem;
+    margin-right: 5px;
+  }
+
+  .testimonial .readers_list {
+    display: block;
+    margin-top: 20px;
+  }
+  .testimonial .readers_list > li {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 10px 30px;
+  }
+  .testimonial .readers_list > li::before {
+    width: 5rem;
+    height: 5rem;
+  }
+  .testimonial .readers_list > li:nth-of-type(3) {
+    position: relative;
+    width: 100%;
+  }
+
+  .testimonial .readers_list > li > span,
+  .testimonial .readers_list > li > .score {
+    padding-left: 130px;
+    text-align: left;
+  }
+  .testimonial .readers_list > li > span {
+    padding-top: 2rem;
+  }
+  .testimonial .readers_list > li > .score {
+    margin-top: 10px;
+    padding-bottom: 1rem;
+  }
+
+  .articleSlide .arti_card .imgs {
+    height: 70vw;
+  }
+  .articleSlide .arti_card figcaption > span {
+    display: inline-block;
+    padding-left: 40%;
+  }
+
+  .subsc_warp {
+    width: 100%;
+    padding: 40px 0;
   }
 }
