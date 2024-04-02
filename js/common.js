@@ -13,11 +13,6 @@ hamBtn.addEventListener('click', (e) => {
   } else {
     hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
   }
-  li.forEach((el) => {
-    if (!gnb.classList.contains('on')) {
-      el.classList.remove('on');
-    }
-  });
 });
 
 gnb.addEventListener('click', (e) => {
@@ -34,10 +29,20 @@ gnb.addEventListener('click', (e) => {
     snsList.classList.remove('on');
   }
   li.forEach((el) => {
-    if (el != closestLi) {
+    if (el != closestLi || !gnb.classList.contains('on')) {
       el.classList.remove('on');
     }
   });
+  if (!gnb.classList.contains('on')) {
+    li.forEach((el) => {
+      el.classList.remove('on');
+      hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+      hamBtn.classList.remove('on');
+    });
+  } else if (e.target == closestLi) {
+    return;
+  }
+
   if (closestLi) {
     closestLi.classList.toggle('on');
   }
