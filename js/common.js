@@ -1,58 +1,26 @@
 const hamBtn = document.querySelector('.ham');
 const gnb = document.querySelector('.gnb');
 const snsList = document.querySelector('.sns_list');
-const li = gnb.querySelectorAll('li');
+const closeBtn = document.querySelector('.menu_close');
 
-hamBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+let toggleOn = () => {
   gnb.classList.toggle('on');
   snsList.classList.toggle('on');
+  closeBtn.classList.toggle('on');
   hamBtn.classList.toggle('on');
+};
 
-  if (hamBtn.classList.contains('on')) {
-    hamBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
-  } else {
-    hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-  }
-});
-
-gnb.addEventListener('click', (e) => {
-  let closestA = e.target.closest('a');
-  let closestLi = e.target.closest('li');
-  if (!closestA) return;
-  if (closestA.parentElement.parentElement === gnb) {
-    e.preventDefault();
-  } else {
-    li.forEach((el) => {
-      el.classList.remove('on');
-    });
-    gnb.classList.remove('on');
-    snsList.classList.remove('on');
-  }
-  li.forEach((el) => {
-    if (el != closestLi || !gnb.classList.contains('on')) {
-      el.classList.remove('on');
-      hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-      hamBtn.classList.remove('on');
-    }
-  });
-  if (closestLi) {
-    closestLi.classList.toggle('on');
-  }
-});
+hamBtn.addEventListener('click', toggleOn);
 
 // swiper
 let articleSlide = new Swiper('.articleSlide', {
-  slidesPerView: 1,
+  slidesPerView: 2,
+  spaceBetween: 20,
   pagination: {
     el: '.atcPg',
     dynamicBullets: true,
   },
   breakpoints: {
-    500: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
     800: {
       slidesPerView: 3,
       spaceBetween: 20,
