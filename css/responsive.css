@@ -242,7 +242,10 @@
     width: 40%;
     height: 532px;
   }
-
+  .learn .learn_wrap::before {
+    bottom: 20px;
+    right: 20px;
+  }
   .learn .learn_list {
     width: calc(55% - 0.5rem);
     padding: 4.3rem 0 3rem;
@@ -364,10 +367,8 @@
     margin-top: 5rem;
   }
   .author .author_wrap::after {
-    left: 20px;
-  }
-  .author .author_wrap.on::after {
     top: 20px;
+    left: 20px;
   }
 
   .author .authoraddress {
@@ -577,8 +578,7 @@
     transform: translateX(-52%);
     background-position: 0 -170px;
   }
-  .author .author_wrap::after,
-  .author .author_wrap.on::after {
+  .author .author_wrap::after {
     left: calc(50%);
     transform: translateX(-48%);
   }
