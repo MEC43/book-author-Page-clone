@@ -1,8 +1,8 @@
 ### 📖 Book & Author Introduce Webpage
 
-#### 참고 Figma https://www.figma.com/community/file/1187662275043405075
+#### 🎇참고 Figma https://www.figma.com/community/file/1187662275043405075
 
-#### Deploy 링크 https://mec43.github.io/first-practice/
+#### 🎆Deploy 링크 https://mec43.github.io/first-practice/
 
 ---
 
