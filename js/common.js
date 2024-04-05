@@ -3,6 +3,9 @@ const gnb = document.querySelector('.gnb');
 const snsList = document.querySelector('.sns_list');
 const li = gnb.querySelectorAll('li');
 
+const author = document.querySelector('.author');
+const learn = document.querySelector('.learn');
+
 hamBtn.addEventListener('click', (e) => {
   gnb.classList.toggle('on');
   snsList.classList.toggle('on');
@@ -59,6 +62,20 @@ gnb.addEventListener('click', (e) => {
   if (closestLi) {
     closestLi.classList.toggle('on');
   }
+});
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const authorPosition = author.offsetTop - author.offsetHeight;
+  const learnPosition = learn.offsetTop - learn.offsetHeight;
+
+  scrollPosition >= authorPosition + 200
+    ? author.querySelector('.author_wrap').classList.add('on')
+    : author.querySelector('.author_wrap').classList.remove('on');
+
+  scrollPosition >= learnPosition + 300
+    ? learn.querySelector('.learn_wrap').classList.add('on')
+    : learn.querySelector('.learn_wrap').classList.remove('on');
 });
 
 // swiper
