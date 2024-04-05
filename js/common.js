@@ -4,20 +4,30 @@ const snsList = document.querySelector('.sns_list');
 const li = gnb.querySelectorAll('li');
 
 hamBtn.addEventListener('click', (e) => {
-  e.preventDefault();
   gnb.classList.toggle('on');
   snsList.classList.toggle('on');
-  hamBtn.classList.toggle('on');
-  if (hamBtn.classList.contains('on')) {
-    hamBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
+
+  if (hamBtn.classList.toggle('on')) {
+    document.body.style.overflow = 'hidden';
+    hamBtn.innerHTML = '<i class="fa-solid fa-x"></i>';
   } else {
-    hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+    document.body.style.overflow = 'auto';
+    hamBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
   }
+
+  li.forEach((e) => {
+    if (e.classList.contains('on')) {
+      e.classList.remove('on');
+    }
+  });
 });
 
 gnb.addEventListener('click', (e) => {
-  let closestA = e.target.closest('a');
-  let closestLi = e.target.closest('li');
+  const closestA = e.target.closest('a');
+  const closestLi = e.target.closest('li');
+  const targetLi = e.target == closestLi;
+  // const gnbOn = gnb.classList.contains('on');
+
   if (!closestA) return;
   if (closestA.parentElement.parentElement === gnb) {
     e.preventDefault();
@@ -28,18 +38,21 @@ gnb.addEventListener('click', (e) => {
     gnb.classList.remove('on');
     snsList.classList.remove('on');
   }
+
   li.forEach((el) => {
-    if (el != closestLi || !gnb.classList.contains('on')) {
+    if (el != e.target.closest('li') || !gnb.classList.contains('on')) {
       el.classList.remove('on');
     }
   });
+
   if (!gnb.classList.contains('on')) {
     li.forEach((el) => {
       el.classList.remove('on');
-      hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-      hamBtn.classList.remove('on');
     });
-  } else if (e.target == closestLi) {
+    hamBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+    hamBtn.classList.remove('on');
+    document.body.style.overflow = 'auto';
+  } else if (targetLi) {
     return;
   }
 
@@ -51,16 +64,20 @@ gnb.addEventListener('click', (e) => {
 // swiper
 let articleSlide = new Swiper('.articleSlide', {
   slidesPerView: 1,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: '.atcPg',
-    dynamicBullets: true,
   },
   breakpoints: {
     500: {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    800: {
+    900: {
       slidesPerView: 3,
       spaceBetween: 20,
     },

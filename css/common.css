@@ -73,7 +73,15 @@ body button {
   font-weight: bold;
   padding: 13px 33px;
   white-space: nowrap;
+  border: 1px solid var(--color-m-bb);
+  transition: 0.3s;
 }
+.yellow_btn:hover {
+  border: 1px solid var(--color-m-yl);
+  background-color: var(--color-m-bb);
+  color: var(--color-m-yl);
+}
+
 .wh_btn {
   border: 1px solid var(--color-m-yl);
   font-size: 1rem;
@@ -81,6 +89,10 @@ body button {
   font-weight: bold;
   padding: 20px 50px;
   white-space: nowrap;
+  transition: 0.3s;
+}
+.wh_btn:hover {
+  background-color: var(--color-m-yl);
 }
 
 /* book_info */
@@ -91,13 +103,20 @@ body button {
   justify-content: space-between;
 }
 .book_info > li {
-  margin-left: 1rem;
+  padding-left: 1rem;
+  position: relative;
 }
-.book_info > li::marker {
-  content: '●';
-  color: var(--color-m-yl);
-  font-size: 1rem;
+.book_info > li::before {
+  content: '';
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--color-m-yl);
+  position: absolute;
+  left: 0;
 }
+
 .book_info > li > span {
   margin-left: 13px;
 }
@@ -117,14 +136,18 @@ body button {
 }
 
 /* header 시작 */
-.hd .hd_wrap {
+.hd {
+  width: 100%;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   padding-top: 40px;
+  z-index: 99;
+}
+
+.hd .hd_wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.2rem;
 }
 
 .hd h1 {
@@ -168,11 +191,73 @@ body button {
 }
 
 .hd .ham {
-  position: absolute;
-  right: 1rem;
   color: var(--color-wh);
   font-size: 2rem;
   display: none;
+}
+
+@media (min-width: 1301px) {
+  .hd .sns_list {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .hd .sns_list a {
+    background-color: var(--color-wh);
+    width: 45px;
+    height: 45px;
+    color: var(--color-m-bb);
+    text-align: center;
+    line-height: 45px;
+  }
+  .hd .sns_list a:hover {
+    background-color: var(--color-m-yl);
+  }
+
+  .hd .gnb {
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .hd .gnb > li {
+    position: relative;
+  }
+  .hd .gnb > li > a {
+    display: inline-block;
+    padding: 0.4rem 1.1rem;
+    color: var(--color-wh);
+    font-family: var(--font-gth);
+    font-size: 0.9rem;
+  }
+
+  .hd .gnb .sub_gnb {
+    position: absolute;
+    min-width: 100%;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+  }
+
+  .hd .gnb .sub_gnb a {
+    display: inline-block;
+    padding: 1.2rem 1.5rem;
+    color: var(--color-wh);
+  }
+
+  .hd .gnb > li:hover .sub_gnb {
+    visibility: visible;
+    opacity: 1;
+  }
+  .hd .gnb > li:hover > a,
+  .hd .gnb > li:nth-of-type(2):hover > a::after,
+  .hd .gnb .sub_gnb li:hover a {
+    color: var(--color-m-yl);
+  }
 }
 
 /* main > .main_visual */
@@ -182,6 +267,7 @@ body button {
 
 .main_visual .main_visual_wrap {
   padding: 186px 0 115px 0;
+  position: relative;
 }
 
 .main_visual h2 > p,
@@ -192,22 +278,20 @@ body button {
 }
 
 .main_visual .mv_left {
-  position: relative;
   padding: 150px 50% 150px 0;
 }
-.main_visual .mv_left::before {
+
+.main_visual .main_visual_wrap::before {
   content: '';
   background-image: url(../img/Book01.jpg);
   position: absolute;
-  top: 0;
   right: 0;
-  width: 50%;
-  height: 100%;
+  width: 42%;
+  height: 80%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
 }
-
 .main_visual h2 > p {
   font-family: var(--font-srf);
   font-style: italic;
@@ -244,6 +328,9 @@ body button {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
+.main_visual .mv_left a:hover {
+  color: var(--color-m-yl);
+}
 
 /* main > .book_main_info */
 .book_main_info {
@@ -257,7 +344,7 @@ body button {
 .book_main_info .book_list {
   padding-top: 80px;
   display: flex;
-  gap: 3.5rem;
+  gap: 3rem;
 }
 .book_main_info .book_list > li {
   position: relative;
@@ -298,7 +385,6 @@ body button {
   color: var(--color-m-bb);
 }
 
-/* .book_main_info .book_info */
 .book_main_info .book_info > li > span:first-of-type {
   color: var(--color-m-bb);
 }
@@ -379,6 +465,25 @@ body button {
   font-size: 0.9rem;
 }
 
+.author .authoraddress::before {
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 35px;
+  height: 200px;
+  transform: skewX(-60deg);
+  filter: blur(10px);
+  left: 0;
+  top: -100%;
+  opacity: 0;
+  transition: 0.7s;
+}
+.author .authoraddress:hover::before {
+  opacity: 1;
+  left: 100%;
+  top: 100%;
+  width: 100px;
+}
 .author .authoraddress {
   background-color: var(--color-m-bb);
   position: relative;
@@ -389,6 +494,7 @@ body button {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  overflow: hidden;
 }
 .author .authoraddress img {
   width: 130px;
@@ -457,11 +563,12 @@ body button {
   content: '';
   position: absolute;
   background-image: url(../img/Photo-6.png);
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-size: contain;
-  background-position: right;
   top: 50%;
+  right: 0;
+  background-position: right;
   transform: translateY(-50%);
   background-repeat: no-repeat;
 }
@@ -585,8 +692,6 @@ body button {
 .chapter .book_info_snd {
   display: flex;
   gap: 1.6rem;
-  /* list-style-type: disc; */
-  /* list-style-position: inside; */
 }
 
 .chapter .book_info_snd li {
@@ -622,6 +727,7 @@ body button {
 
 .chapter .trail-bnt {
   padding: 20px 120px;
+  border-color: transparent;
 }
 .chapter .chapter_wrap > p {
   width: 350px;
@@ -631,6 +737,10 @@ body button {
   color: var(--color-m-bb);
   text-decoration: underline;
   text-underline-offset: 4px;
+  transition: 0.3s;
+}
+.chapter .chapter_wrap > p > a:hover {
+  font-size: 1.05rem;
 }
 
 /* main > .testimonial */
@@ -819,6 +929,7 @@ body button {
 
 .articles .articles_wrap .atcPg {
   bottom: -20px;
+  width: 100%;
 }
 .atcPg .swiper-pagination-bullet {
   border-radius: 0;
@@ -870,6 +981,19 @@ body button {
   height: 64px;
   white-space: nowrap;
 }
+.subsc_warp .subsc_bnt:hover {
+  animation: subsc 1s infinite alternate ease-out;
+}
+@keyframes subsc {
+  0% {
+    scale: 1;
+    color: var(--color-wh);
+  }
+  100% {
+    scale: 1.05;
+    color: var(--color-m-yl);
+  }
+}
 
 /* footer 영역 */
 .foot {
@@ -904,7 +1028,13 @@ body button {
   color: var(--color-wh);
   text-align: center;
   line-height: 55px;
+  transition: 0.3s;
 }
+.foot .ft_sns_list a:hover {
+  background-color: var(--color-m-yl);
+  color: var(--color-m-bb);
+}
+
 .ft_wrap > * > p:first-of-type {
   color: var(--color-wh);
   font-family: var(--font-srf);
@@ -936,6 +1066,11 @@ body button {
 .ft_wrap .ft_sub li > a {
   padding-left: 40px;
   white-space: nowrap;
+  transition: 0.3s;
+}
+.ft_wrap .ft_nb_sub li:hover a,
+.ft_wrap .ft_sub li:hover a {
+  color: var(--color-wh);
 }
 
 .foot .contact {
@@ -957,7 +1092,6 @@ body button {
 .ft_wrap .contact span:last-of-type {
   width: 75%;
 }
-
 .ft_wrap .ft_nb_sub li > a,
 .ft_wrap .ft_sub li > a,
 .foot .contact p:nth-of-type(n + 2) {
