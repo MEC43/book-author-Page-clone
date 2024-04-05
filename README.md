@@ -1,15 +1,15 @@
-### 📖 Book & Author Introduce Webpage
+### 📖 Book&Author Webpage 클론코딩
 
 #### 🎇참고 Figma https://www.figma.com/community/file/1187662275043405075
 
-#### 🎆Deploy 링크 https://mec43.github.io/first-practice/
-
----
+#### [🎆Deploy 링크](https://mec43.github.io/first-practice/)
 
 - Figma시안을 토대로 HTML, CSS , JavaScript 작성
-- swiper 사용하여 슬라이드 구현
 - 반응형 1300px, 1000px, 800px, 500px
 - 반응형은 제시된 시안이 없어 임의로 작성했습니다.
+- swiper 사용하여 슬라이드 구현
+
+---
 
 #### ⚒️ Infra and Tools
 
@@ -22,6 +22,10 @@
 ![HTML5](https://img.shields.io/badge/html5-E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-1572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=white)
+
+#### 📚 Library
+
+![Swiper](https://img.shields.io/badge/swiper-6332F6.svg?&style=for-the-badge&logo=swiper&logoColor=white)
 
 ---
 
